@@ -17,7 +17,7 @@ We realized that, not only we would need to do trial & error with things like [t
 [JLo](https://www.linkedin.com/in/jlsanchezros/) helped our class out, providing a python console program to extract tweets using [web scraping](https://github.com/JustAnotherArchivist/snscrape).
 Even though this way of extracting the tweets would not be using the distributing processing benefits of the Databricks runtime [Apache Spark](https://spark.apache.org/), we were still somehow limited to massively get twitter data due to API usage limits. So this was our next best thing to do, with the resources we had at hand. 
 
-<img src="https://user-images.githubusercontent.com/11904085/127054865-d7759bfb-f5db-4c2c-912e-3e9c33b10804.png" width="600">
+<img src="https://user-images.githubusercontent.com/11904085/127054871-d8d90f2b-1d9d-4113-b276-7b3eff662615.jpg" width="300">
 
 ## Second, store the tweets in MongoDB 
 
@@ -41,7 +41,7 @@ So we just used expert's judgement and some old-fashioned twitter browing to det
 
 Example: 
 
-![ElonvsDoge](https://user-images.githubusercontent.com/11904085/127054871-d8d90f2b-1d9d-4113-b276-7b3eff662615.jpg)
+![ElonvsDoge](https://user-images.githubusercontent.com/11904085/127054865-d7759bfb-f5db-4c2c-912e-3e9c33b10804.png)
 
 Steps three and four, are at [Asset Ticker vs Tweets](https://github.com/joseph-higaki/asset-ticker-vs-tweets/blob/7454c40556836822119ec2577a9be21416018d25/Asset%20Ticker%20vs%20Tweets.dbc) Databricks notebook.
 This is the [IPython notebook version](https://github.com/joseph-higaki/asset-ticker-vs-tweets/blob/7454c40556836822119ec2577a9be21416018d25/Asset%20Ticker%20vs%20Tweets.ipynb) exported from a Databricks notebook. Github won't a *.dbc file. Just notice that *.ipynb won't be able to run over a Jupyter Notebook as is.
