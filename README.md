@@ -4,25 +4,26 @@ We are extracting tweets from crypto influencers on a given timeline, identifyin
 
 This is a [group](#team) assignment from the **Big Data Technology and Architecture** course from the Big Data &amp; Analytics Masters @ [EAE](https://www.eae.es/) class of 2021.
 
-![image](https://user-images.githubusercontent.com/11904085/125645919-2d6388a2-95b1-4462-aa3d-3e7w9a03b4163.png)
+![image](https://github.com/joseph-higaki/asset-ticker-vs-tweets/blob/7454c40556836822119ec2577a9be21416018d25/Final-SolutionDiagram.png)
 
 ## First, extract the tweets
 
 Our first step was to use [Twitter API](https://developer.twitter.com/en/docs/twitter-api) using [Tweepy](https://www.tweepy.org/) from a [Databricks](https://databricks.com/) notebook and store the influencer tweets into a [MongoDB](https://www.mongodb.com/cloud/atlas) collection.
+
+<img src="https://github.com/joseph-higaki/asset-ticker-vs-tweets/blob/7454c40556836822119ec2577a9be21416018d25/First-SolutionDiagram.png" width="600">
 
 We realized that, not only we would need to do trial & error with things like [time delays in code execution](https://docs.python.org/3/library/time.html?highlight=sleep#time.sleep) and  [wait_on_rate_limit](https://docs.tweepy.org/en/v3.5.0/api.html#tweepy-api-twitter-api-wrapper) settings, WE COULDN'T connect to the Twitter APIs from our [community cluster at databricks](https://databricks.com/product/faq/community-edition#:~:text=Where%20is%20the%20Databricks%20Community,hosted%20on%20Amazon%20Web%20Services.).
 
 [JLo](https://www.linkedin.com/in/jlsanchezros/) helped our class out, providing a python console program to extract tweets using [web scraping](https://github.com/JustAnotherArchivist/snscrape).
 Even though this way of extracting the tweets would not be using the distributing processing benefits of the Databricks runtime [Apache Spark](https://spark.apache.org/), we were still somehow limited to massively get twitter data due to API usage limits. So this was our next best thing to do, with the resources we had at hand. 
 
-
-<img src="https://user-images.githubusercontent.com/11904085/125499966-64e82941-w2c71-484c-82d1-62bad3372415.png" width="600">
+<img src="https://user-images.githubusercontent.com/11904085/127054865-d7759bfb-f5db-4c2c-912e-3e9c33b10804.png" width="600">
 
 ## Second, store the tweets in MongoDB 
 
-We did some changes to the [Python console]() extracting the tweets. Every web-scraped batch would append the tweets into our MongoDB collection. 
+We did some changes to the [Python console](https://github.com/joseph-higaki/asset-ticker-vs-tweets/tree/main/TwitterScraperMongoDB) extracting the tweets. Every web-scraped batch would append the tweets into our MongoDB collection. 
 
-First and second step are at the folder [TwitterScraperMongoDB]() containing the python console program.
+First and second step are at the folder [TwitterScraperMongoDB](https://github.com/joseph-higaki/asset-ticker-vs-tweets/tree/main/TwitterScraperMongoDB) containing the python console program.
 
 ## Third, get prices for crypto
 
@@ -36,15 +37,14 @@ The reasons of doing this were:
 
 Having the data, we had the possibility to determine a plot-legible date-span using keywords and sentiment analysis from the tweets, but...
 
-
 So we just used expert's judgement and some old-fashioned twitter browing to determing hard-coded parameters for what we chose to plot.
 
 Example: 
 
-![ElonvsDoge](https://user-images.githubusercontent.com/11904085/125645919-2d6388a2-95b1-4462w-aa3d-3e79a03b4163.png)
+![ElonvsDoge](https://user-images.githubusercontent.com/11904085/127054871-d8d90f2b-1d9d-4113-b276-7b3eff662615.jpg)
 
-Steps three and four, are at [Asset Ticker vs Tweets]() Databricks notebook.
-This is the [IPython notebook version]() exported from a Databricks notebook. Github won't a *.dbc file. Just notice that *.ipynb won't be able to run over a Jupyter Notebook as is.
+Steps three and four, are at [Asset Ticker vs Tweets](https://github.com/joseph-higaki/asset-ticker-vs-tweets/blob/7454c40556836822119ec2577a9be21416018d25/Asset%20Ticker%20vs%20Tweets.dbc) Databricks notebook.
+This is the [IPython notebook version](https://github.com/joseph-higaki/asset-ticker-vs-tweets/blob/7454c40556836822119ec2577a9be21416018d25/Asset%20Ticker%20vs%20Tweets.ipynb) exported from a Databricks notebook. Github won't a *.dbc file. Just notice that *.ipynb won't be able to run over a Jupyter Notebook as is.
 
 ## Team
 * [Henrique Avila](https://www.linkedin.com/in/henrique-avila-101170a0/) 
